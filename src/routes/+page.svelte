@@ -43,7 +43,7 @@
 <Switch id="timing_method" bind:switch_value />
 
 <!-- <div>readyState: {video.readyState}</div> -->
-<div>currentTime: {format_time(frame)}</div>
+<div>currentTime: {format_time(frame, duration)}</div>
 <!-- <div>duration: {video ? video.duration : undefined}</div> -->
 <div>can advance?: {advance_ready}</div>
 <!-- svelte-ignore a11y-media-has-caption -->
@@ -64,7 +64,9 @@
 <br /><button on:click={() => (start_frame = frame)}>Set Start</button>
 <button on:click={() => (end_frame = frame)}>Set End</button>
 <span>
-    {format_time((end_frame - start_frame + +(switch_value == "frame")))}
+    {format_time(
+        (end_frame - start_frame + +(switch_value == "frame")), duration
+    )}
 </span>
 <!--
     Math.floor(video.duration * 30)

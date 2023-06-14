@@ -11,13 +11,11 @@
     export let advance_ready;
     advance_ready = true;
     let overlay = {style:{}}; // if it aint broke dont fix it 
-    // $: {
-    //     // overlay.style.visibility = advance_ready ? "hidden" : "visible";
-    //     if(!advance_ready || readyState < 3) {
-    //         overlay.classList.add("reveal");
-    //     } 
-    //     else overlay.classList.remove("reveal");
-    // }
+   
+    export function update_src() {
+        
+    }
+
     export async function set_video_time(n) {
         if (!advance_ready) return;
         if(n < 0) n = 0;
