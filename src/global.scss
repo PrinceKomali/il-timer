@@ -1,0 +1,23 @@
+:root {
+  --color-blue-50: #eeeefe;
+  --color-blue-200: hsl(240, 12%, 60%);
+  --color-blue-400: hsl(240, 12%, 33%);
+  --color-blue-950: #111116;
+
+  --em-size-50: 0.5em;
+  --em-size-100: 1em;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-blue-50);
+  background-image: url("texture_nobg.png"); //TODO: NOT WORKING
+  background-color: var(--color-blue-950);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 5rem 10rem;
+}
+
+.float-right {
+  float: right;
+}

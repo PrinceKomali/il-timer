@@ -51,5 +51,5 @@
     />
 </div>
 <style lang="scss">
-    @import "../../styles/video.scss";
+    @use "../../styles/video.scss";
 </style>

@@ -1,35 +1,8 @@
 .switch {
-    // color: white;
-    // font-size: 20px;
-    // font-family: Arial, Helvetica, sans-serif;
     .switch_label {
         cursor: pointer;
     }
     .switch_input {
         display: none;
-        &:not(:checked) + .switch_display {
-            // animation: switch_animation_2 .5s linear;
-            // background-color: blue;
-        }
-        &:checked + .switch_display {
-            // animation: switch_animation .5s linear;
-            // background-color: red;
-        }
     }
 }
-// @keyframes switch_animation {
-//     0% {
-//         background-color: blue;
-//     }
-//     100% {
-//         background-color: red;
-//     }
-// }
-// @keyframes switch_animation_2 {
-//     0% {
-//         background-color: red;
-//     }
-//     100% {
-//         background-color: blue;
-//     }
-// }

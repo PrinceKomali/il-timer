@@ -1,33 +1,45 @@
-$slider_value: blue;
-$slider_bg: red;
+$color-slider_value: var(--color-blue-200);
+$color-slider_bg: var(--color-blue-400);
+
 input[type="range"] {
     overflow: hidden;
-    width: 80px;
     appearance: none;
     -webkit-appearance: none;
-    height: 1em;
-    width: 500px;
-    background-color: $slider_bg;
+    cursor: pointer;
+    border-radius: var(--em-size-50);
+
+    height: var(--em-size-10);
+    width: 100%;
+
+    margin-top: var(--em-size-50);
+
+    background-color: $color-slider_bg;
+
     &::-webkit-slider-runnable-track {
         height: 10px;
         -webkit-appearance: none;
         color: #13bba4;
         margin-top: -1px;
     }
+
     &::-webkit-slider-thumb {
         appearance: none;
         -webkit-appearance: none;
         width: 0;
         height: 0;
-        box-shadow: -80px 0 0 80px $slider_value;
+        box-shadow: -80px 0 0 80px $color-slider_value;
     }
+
     &::-moz-range-thumb {
         width: 0;
         height: 0;
         border: none;
     }
+
     &::-moz-range-progress {
-        background-color: $slider_value;
+        background-color: $color-slider_value;
+        border-bottom-right-radius: var(--em-size-50);
+        border-top-right-radius: var(--em-size-50);
         height: 100%;
     }
     
