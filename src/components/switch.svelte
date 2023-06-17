@@ -18,5 +18,5 @@
 </div>
 
 <style lang="scss">
-    @import "../../styles/switch.scss";
+    @use "../../styles/switch.scss";
 </style>

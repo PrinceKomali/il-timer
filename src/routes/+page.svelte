@@ -43,7 +43,6 @@
 <Switch id="timing_method" bind:switch_value />
 
 <!-- <div>readyState: {video.readyState}</div> -->
-<div>currentTime: {format_time(frame, duration)}</div>
 <!-- <div>duration: {video ? video.duration : undefined}</div> -->
 <div>can advance?: {advance_ready}</div>
 <!-- svelte-ignore a11y-media-has-caption -->
@@ -61,6 +60,7 @@
     bind:slider_value
     fn={slider_time}
 />
+<div class="float-right">{format_time(frame, duration)}</div>
 <br /><button on:click={() => (start_frame = frame)}>Set Start</button>
 <button on:click={() => (end_frame = frame)}>Set End</button>
 <span>

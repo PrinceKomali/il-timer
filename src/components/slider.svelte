@@ -6,6 +6,6 @@
     export let fn;
 </script>
 <style lang="scss">
-    @import "../../styles/slider.scss";
+    @use "../../styles/slider.scss";
 </style>
 <input type="range" min={from} max={to} bind:value={slider_value} on:change={fn}/>
