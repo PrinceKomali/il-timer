@@ -20,6 +20,25 @@
             transition-delay: 300ms;
         }
     }
+    .no_video {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        .no_video_icon {
+            width: 20%;
+            height: auto;
+            margin: auto;
+            filter: grayscale(100);
+            opacity: .2;
+        }
+        &.hidden {
+            visibility: hidden;
+        }
+    }
     video {
         display: block;
         width: 100%;

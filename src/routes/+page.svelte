@@ -3,6 +3,8 @@
 
     import { format_time } from "../format";
 
+    import File from "../components/file_input.svelte";
+
     import Switch from "../components/switch.svelte";
     import Slider from "../components/slider.svelte";
     import Video from "../components/video.svelte";
@@ -40,6 +42,7 @@
 </script>
 
 <svelte:window on:keydown={keyHandler} />
+<File video={video} /><br /><br />
 <Switch id="timing_method" bind:switch_value />
 
 <!-- <div>readyState: {video.readyState}</div> -->
