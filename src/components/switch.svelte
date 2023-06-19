@@ -6,14 +6,17 @@
 </script>
 
 <div class="switch" {id}>
-    Timing Method: <label for="{id}_input" class="switch_label">
+    Timing Method: 
+    <label for="{id}_input">
+        <div>
+            <div class="slider" data-checked={switch_value_raw} />
+            <span class="switch_display">{switch_value_raw ? "Delta Time" : "Frame Count"}</span>
+        </div>
         <input
             bind:checked={switch_value_raw}
             id="{id}_input"
             type="checkbox"
-            class="switch_input"
         />
-        <span class="switch_display">{switch_value_raw ? "Delta Time" : "Frame Count"}</span>
     </label>
 </div>
 

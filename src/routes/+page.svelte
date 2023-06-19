@@ -59,15 +59,17 @@
     to={Math.floor(duration * 30)}
     bind:slider_value
     fn={slider_time}
+    start_frame={start_frame}
+    end_frame={end_frame}
 />
 <div class="float-right">{format_time(frame, duration)}</div>
 <br /><button on:click={() => (start_frame = frame)}>Set Start</button>
 <button on:click={() => (end_frame = frame)}>Set End</button>
-<span>
+<div>
     {format_time(
         (end_frame - start_frame + +(switch_value == "frame")), duration
     )}
-</span>
+</div>
 <!--
     Math.floor(video.duration * 30)
 -->

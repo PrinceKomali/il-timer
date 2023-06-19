@@ -48,3 +48,9 @@ input[type="range"] {
     
 }
 
+.start_frame {
+    margin-left: calc(0.5px * var(--start_frame));
+    width: 1em;
+    height: 1em;
+    background: red;
+}
