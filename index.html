@@ -1,1 +1,96 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <title>IL Timer V4</title>
+		<link rel="icon" href="./favicon.png" />
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+        <meta name="theme-color" content="#56bab7" />
+        <meta name="description" content="Run timer for Breath of the Wild/Tears of the Kingdom" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://timer.komali.dev/" />
+        <meta property="og:title" content="Run timer for Breath of the Wild/Tears of the Kingdom" />
+        <meta property="og:image" content="favicon.png" />
+			<style lang="scss" global>
+					@import "src/global.scss";
+			</style>
+		
+		<link href="./_app/immutable/assets/2.eb7379ab.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.5a8decb3.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.9fe87111.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.40a33a9d.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.7c0f4ee6.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.e1682070.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.0f29ef40.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+        <div class="background"></div>
+		<div style="display: contents">
+
+
+
+<button style="width: 6em"><label class="input_label svelte-16kjzo5" for="file_input">Load File</label></button>
+<input class="url_input svelte-16kjzo5" type="text" data-empty="true" placeholder="https://..." value="">
+<input id="file_input" type="file" class="svelte-16kjzo5"><br><br>
+
+<div class="switch svelte-ljxw0c" id="timing_method">Timing Method:  
+    <label for="timing_method_input" class="svelte-ljxw0c"><div class="svelte-ljxw0c"><div class="slider svelte-ljxw0c" data-checked="false"></div>
+            <span class="switch_display">Frame Count</span></div>
+        <input id="timing_method_input" type="checkbox" class="svelte-ljxw0c"></label>
+</div>
+<button style="float: right; position: relative">Nerd Stuff
+</button>
+<div class="switch svelte-ljxw0c" id="frames_or_seconds">Display Method:  
+    <label for="frames_or_seconds_input" class="svelte-ljxw0c"><div class="svelte-ljxw0c"><div class="slider svelte-ljxw0c" data-checked="false"></div>
+            <span class="switch_display">Seconds</span></div>
+        <input id="frames_or_seconds_input" type="checkbox" class="svelte-ljxw0c"></label>
+</div>
+
+
+
+
+
+
+<div class="video_container svelte-17mjzuo"><div class="overlay  svelte-17mjzuo" this="[object Object]"><img src="load.gif" alt="" class="loading svelte-17mjzuo"></div>
+    <div class="no_video  svelte-17mjzuo"><img src="favicon.png" alt="" class="no_video_icon svelte-17mjzuo"></div>
+    <video  src="" muted class="svelte-17mjzuo" this="[object Object]" currentTime="0"></video>
+</div>
+<input type="range" min="0" max="0" class="svelte-cdkkzt" value="0">
+<div class="markers svelte-cdkkzt"><div style="--start_frame:0; --duration:0" class="start_frame svelte-cdkkzt"><img alt="" src="/end.png" class="svelte-cdkkzt"></div>
+    <div style="--end_frame:0; --duration:0" class="end_frame svelte-cdkkzt"><img alt="" src="/end.png" class="svelte-cdkkzt"></div>
+</div>
+<div class="float-right">0.000</div>
+<br><button>Set Start</button>
+<button>Set End</button>
+<div>0.000</div>
+
+
+			
+			<script>
+				{
+					__sveltekit_foj59s = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.5a8decb3.js"),
+						import("./_app/immutable/entry/app.7c0f4ee6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
