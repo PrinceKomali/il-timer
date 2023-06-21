@@ -2,7 +2,7 @@
     transition: .2s;
     width: var(--em-size-200);
     &[data-empty="false"] {
-        width: calc(var(--em-size-100) * 8);
+        width: calc(var(--em-size-100) * 15);
     }
 }
 .input_label {

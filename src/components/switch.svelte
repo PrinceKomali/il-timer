@@ -2,15 +2,18 @@
     export let id;
     let switch_value_raw = false;
     export let switch_value;
-    $: switch_value = switch_value_raw ? "delta" : "frame";
+    export let values;
+    export let label;
+    export let disp_values;
+    $: switch_value = switch_value_raw ? values[0] : values[1];
 </script>
 
 <div class="switch" {id}>
-    Timing Method: 
+    {label}{": "} 
     <label for="{id}_input">
         <div>
             <div class="slider" data-checked={switch_value_raw} />
-            <span class="switch_display">{switch_value_raw ? "Delta Time" : "Frame Count"}</span>
+            <span class="switch_display">{switch_value_raw ? disp_values[0] : disp_values[1]}</span>
         </div>
         <input
             bind:checked={switch_value_raw}

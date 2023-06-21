@@ -1,7 +1,6 @@
 <svelte:options accessors />
 
 <script>
-    // https://api.komali.dev/dl?url=https://www.youtube.com/watch?v=Oi1plRzDR8w
     export let video_element = { src: "" };
     export let currentTime = 0;
     export let duration;
@@ -17,14 +16,19 @@
         if (n == frame) return;
         if (n < 0) n = 0;
         if (n / 30 > duration) n = Math.floor(duration * 30);
+        if(!video_element) return;
         frame = n;
         video_element.currentTime = frame / 30;
 
         advance_ready = false;
-
+        let int_n = -1;
         await new Promise((r) => {
             video_element.onseeked = r;
+            if(video_element.readyState < 3) int_n = setInterval(() => {
+                if(video_element.readyState > 2) r(); // I hate this but it works 
+            }, 1000)
         });
+        if(int_n != -1) clearInterval(int_n);
         advance_ready = true;
     }
     export async function frame_advance(n) {

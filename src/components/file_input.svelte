@@ -1,17 +1,24 @@
 <script>
     export let video;
-    let text_value = "";
-
+    export let reset; 
+    export let text_value = "";
+    export function submit_video() {
+        return text_value.trim().length < 1 ? load_blob() : load_url();
+    }
     function load_url() {
         video.video_element.src = 'https://api.komali.dev/dl?url=' + encodeURIComponent(text_value);
         video.loaded = true;
         video.set_video_time(0);
+        text_value = "";
+        reset();
     }
     function load_blob() {
         if (this.files && this.files[0]) {
             video.video_element.src = URL.createObjectURL(this.files[0]);
             video.loaded = true;
             video.set_video_time(0);
+            text_value = "";
+            reset();
         }
     }
     // TODO: check for validity

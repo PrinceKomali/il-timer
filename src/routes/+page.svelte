@@ -13,12 +13,21 @@
     let video;
     let currentTime = 0;
     let readyState;
-    let duration;
+    let duration = 0;
     let advance_ready;
     let frame;
     let start_frame = 0;
     let end_frame = 0;
+    let text_value;
+    let submit_video;
+    let switch_value_display;
 
+    let show_nerd_stuff = false;
+
+    function reset_start_end() {
+        start_frame = 0;
+        end_frame = 0;
+    }
     async function slider_time() {
         // if (!video) return;
         await video.set_video_time(slider_value);
@@ -30,25 +39,54 @@
     });
 
     async function keyHandler(e) {
+        if (text_value.trim().length > 0) {
+            if (e.keyCode == 13) submit_video();
+            else return;
+        }
         if (e.keyCode == 37) {
             e.preventDefault();
             await video.frame_advance(e.shiftKey ? -15 : -1);
-        }
-        if (e.keyCode == 39) {
+        } else if (e.keyCode == 39) {
             e.preventDefault();
             await video.frame_advance(e.shiftKey ? 15 : 1);
         }
     }
 </script>
 
-<svelte:window on:keydown={keyHandler} />
-<File video={video} /><br /><br />
-<Switch id="timing_method" bind:switch_value />
+<svelte:body on:keydown={keyHandler} />
+<File {video} reset={reset_start_end} bind:text_value bind:submit_video /><br
+/><br />
 
-<!-- <div>readyState: {video.readyState}</div> -->
-<!-- <div>duration: {video ? video.duration : undefined}</div> -->
-<div>can advance?: {advance_ready}</div>
-<!-- svelte-ignore a11y-media-has-caption -->
+<Switch
+    id="timing_method"
+    bind:switch_value
+    label="Timing Method"
+    values={["delta", "frame"]}
+    disp_values={["Delta Time", "Frame Count"]}
+/>
+<button
+    style="float: right; position: relative"
+    on:click={() => (show_nerd_stuff = !show_nerd_stuff)}
+>
+    Nerd Stuff
+</button>
+<Switch
+    id="frames_or_seconds"
+    bind:switch_value={switch_value_display}
+    label="Display Method"
+    values={["frame", "ms"]}
+    disp_values={["Frames", "Seconds"]}
+/>
+
+{#if show_nerd_stuff}
+    <code>
+        <div>can advance?: {advance_ready}</div>
+        <div>readyState: {readyState}</div>
+        <div>duration: {duration}</div>
+        <div>currentTime: {currentTime}</div>
+        <div>frame: {frame}</div>
+    </code>
+{/if}
 <Video
     bind:this={video}
     bind:currentTime
@@ -62,17 +100,18 @@
     to={Math.floor(duration * 30)}
     bind:slider_value
     fn={slider_time}
-    start_frame={start_frame}
-    end_frame={end_frame}
+    {start_frame}
+    {end_frame}
 />
-<div class="float-right">{format_time(frame, duration)}</div>
+<div class="float-right">
+    {format_time(frame, duration, switch_value_display)}
+</div>
 <br /><button on:click={() => (start_frame = frame)}>Set Start</button>
 <button on:click={() => (end_frame = frame)}>Set End</button>
 <div>
     {format_time(
-        (end_frame - start_frame + +(switch_value == "frame")), duration
+        end_frame - start_frame + +(switch_value == "frame"),
+        duration,
+        switch_value_display
     )}
 </div>
-<!--
-    Math.floor(video.duration * 30)
--->
