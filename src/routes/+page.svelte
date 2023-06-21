@@ -115,3 +115,6 @@
         switch_value_display
     )}
 </div>
+<style lang="scss" global>
+    @import "src/global.scss";
+</style>
