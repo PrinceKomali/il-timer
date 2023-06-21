@@ -116,5 +116,5 @@
     )}
 </div>
 <style lang="scss" global>
-    @import "src/global.scss";
+    @import "styles/global.scss";
 </style>

@@ -10,6 +10,7 @@
         video.loaded = true;
         video.set_video_time(0);
         text_value = "";
+        video.video_element.load();
         reset();
     }
     function load_blob() {
@@ -18,6 +19,7 @@
             video.loaded = true;
             video.set_video_time(0);
             text_value = "";
+            video.video_element.load();
             reset();
         }
     }

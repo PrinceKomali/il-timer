@@ -1,6 +1,6 @@
 .url_input {
     transition: .2s;
-    width: var(--em-size-200);
+    width: calc(var(--em-size-100) * 5);
     &[data-empty="false"] {
         width: calc(var(--em-size-100) * 15);
     }
