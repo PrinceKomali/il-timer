@@ -3,6 +3,7 @@
         cursor: pointer;
 
         > div {
+            width: max-content;
             display: flex;
             gap: var(--em-size-50);
             align-items: center;
@@ -11,6 +12,7 @@
     input {
         display: none;
     }
+    width: max-content;
 }
 
 .slider {
@@ -18,10 +20,23 @@
     width: var(--em-size-200);
     height: var(--em-size-100);
     padding: var(--em-size-10);
-    background: red;
+    background: var(--color-blue-400);
     border-radius: 100vmax;
+    position: relative;
 
-    &[data-checked="true"] {
-        background: green;
+    &::after {
+        transition: 300ms ease;
+        border-radius: 100vmax;
+        content: "";
+        display: block;
+        width: var(--em-size-100);
+        height: var(--em-size-100);
+        background: var(--color-blue-200);
+        position: absolute;
+        left: var(--em-size-15);
+    }
+
+    &[data-checked="true"]::after {
+        left: calc(var(--em-size-100) + var(--em-size-5));
     }
 }
