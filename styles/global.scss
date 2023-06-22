@@ -16,6 +16,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--color-blue-50);
+    overflow-x: hidden;
+
     .background {
         background: url("/texture_nobg.png") repeat;
         position: fixed;
