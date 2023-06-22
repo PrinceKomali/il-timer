@@ -1,4 +1,11 @@
 .url_input {
+    border-radius: var(--em-size-50);
+    border: var(--em-size-20) solid var(--color-blue-400);
+    padding: var(--em-size-25) var(--em-size-50);
+    font: inherit;
+    background-color: transparent;
+    color: var(--color-blue-50);
+
     transition: .2s;
     width: calc(var(--em-size-100) * 5);
     &[data-empty="false"] {

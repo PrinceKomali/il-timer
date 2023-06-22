@@ -6,6 +6,7 @@
     --em-size-5: 0.05em;
     --em-size-10: 0.1em;
     --em-size-15: 0.15em;
+    --em-size-20: 0.2em;
     --em-size-25: 0.25em;
     --em-size-50: 0.5em;
     --em-size-100: 1em;
@@ -47,7 +48,7 @@ button {
     background: none;
     border-radius: var(--em-size-50);
     padding: var(--em-size-25) var(--em-size-50);
-    border: 3px solid var(--color-blue-400);
+    border: var(--em-size-20) solid var(--color-blue-400);
     cursor: pointer;
     font: inherit;
 
