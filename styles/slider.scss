@@ -7,6 +7,7 @@ input[type="range"] {
     -webkit-appearance: none;
     cursor: pointer;
     border-radius: var(--em-size-50);
+    margin-top: var(--em-size-50);
 
     &:focus-visible {
         outline: 3px solid var(--color-blue-50);
@@ -15,7 +16,6 @@ input[type="range"] {
     height: var(--em-size-100);
     width: 100%;
 
-    margin-top: var(--em-size-50);
 
     background-color: $color-slider_bg;
 
@@ -53,12 +53,14 @@ input[type="range"] {
 }
 .markers {
     position: relative;
+    margin-bottom: var(--em-size-200);
+
     .start_frame,
     .end_frame {
         position: absolute;
         width: 1em;
-        height: 1em;
-        // background: blue;
+        aspect-ratio: 1;
+
         img {
             display: block;
             width: 100%;

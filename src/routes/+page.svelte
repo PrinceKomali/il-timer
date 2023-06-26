@@ -54,29 +54,29 @@
 </script>
 
 <svelte:body on:keydown={keyHandler} />
-<File {video} reset={reset_start_end} bind:text_value bind:submit_video /><br
-/><br />
+<File {video} reset={reset_start_end} bind:text_value bind:submit_video />
 
-<Switch
-    id="timing_method"
-    bind:switch_value
-    label="Timing Method"
-    values={["delta", "frame"]}
-    disp_values={["Delta Time", "Frame Count"]}
-/>
-<button
-    style="float: right; position: relative"
-    on:click={() => (show_nerd_stuff = !show_nerd_stuff)}
->
-    Nerd Stuff
-</button>
-<Switch
-    id="frames_or_seconds"
-    bind:switch_value={switch_value_display}
-    label="Display Method"
-    values={["frame", "ms"]}
-    disp_values={["Frames", "Seconds"]}
-/>
+<div class="controls">
+    <Switch
+        id="timing_method"
+        bind:switch_value
+        label="Timing Method"
+        values={["delta", "frame"]}
+        disp_values={["Delta Time", "Frame Count"]}
+    />
+    <Switch
+        id="frames_or_seconds"
+        bind:switch_value={switch_value_display}
+        label="Display Method"
+        values={["frame", "ms"]}
+        disp_values={["Frames", "Seconds"]}
+    />
+    <button
+        on:click={() => (show_nerd_stuff = !show_nerd_stuff)}
+    >
+        Nerd Stuff
+    </button>
+</div>
 
 {#if show_nerd_stuff}
     <code>
@@ -106,7 +106,7 @@
 <div class="float-right">
     {format_time(frame, duration, switch_value_display)}
 </div>
-<br /><button on:click={() => (start_frame = frame)}>Set Start</button>
+<button on:click={() => (start_frame = frame)}>Set Start</button>
 <button on:click={() => (end_frame = frame)}>Set End</button>
 <div>
     {format_time(

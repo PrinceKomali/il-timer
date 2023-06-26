@@ -67,3 +67,11 @@ button {
 code {
     font-size: 0.8em;
 }
+
+.controls {
+    width: 51%;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr max-content;
+    align-items: center;
+    margin-block: var(--em-size-50);
+}
