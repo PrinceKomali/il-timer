@@ -8,6 +8,10 @@ input[type="range"] {
     cursor: pointer;
     border-radius: var(--em-size-50);
 
+    &:focus-visible {
+        outline: 3px solid var(--color-blue-50);
+    }
+
     height: var(--em-size-100);
     width: 100%;
 

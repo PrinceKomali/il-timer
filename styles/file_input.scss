@@ -6,10 +6,19 @@
     background-color: transparent;
     color: var(--color-blue-50);
 
-    transition: .2s;
+    transition: 
+        width 
+        var(--transition-duration) 
+        var(--transition-timing-function);
     width: calc(var(--em-size-100) * 5);
+    
     &[data-empty="false"] {
         width: calc(var(--em-size-100) * 15);
+    }
+
+    &:focus-visible {
+        border-color: var(--color-blue-50);
+        outline: none;
     }
 }
 .input_label {
