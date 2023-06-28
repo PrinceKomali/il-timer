@@ -16,13 +16,13 @@
     <meta property="og:description" content="Run timer for Breath of the Wild / Tears of the Kingdom">
     <meta property="og:image" content="https://timer.komali.dev/favicon.png">
     
-		<link href="./_app/immutable/assets/2.78ac167f.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.b531ff82.js">
+		<link href="./_app/immutable/assets/2.466fac66.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.868621eb.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.9fe87111.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.07786fd6.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.a7977d92.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.ec4bb71d.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.f1e6223f.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.e1682070.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.18e97a79.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.7fe00b32.js">
 </head>
 
 <body data-sveltekit-preload-data="hover">
@@ -31,38 +31,38 @@
 
 
 
-<button style="width: 6em"><label class="input_label svelte-1i6kv43" for="file_input">Load File</label></button>
-<input class="url_input svelte-1i6kv43" type="text" data-empty="true" placeholder="https://..." value="">
-<input id="file_input" type="file" class="svelte-1i6kv43"><br><br>
+<button style="width: 6em"><label class="input_label svelte-1qr4qvs" for="file_input">Load File</label></button>
+<input class="url_input svelte-1qr4qvs" type="text" data-empty="true" placeholder="https://..." value="">
+<input id="file_input" type="file" class="svelte-1qr4qvs">
 
-<div class="switch svelte-1n0nqp3" id="timing_method">Timing Method:  
-    <label for="timing_method_input" class="svelte-1n0nqp3"><div class="svelte-1n0nqp3"><div class="slider svelte-1n0nqp3" data-checked="false"></div>
+<div class="controls"><div class="switch svelte-1c927sg" id="timing_method">Timing Method:  
+    <label for="timing_method_input" class="svelte-1c927sg"><div class="svelte-1c927sg"><div class="slider svelte-1c927sg" data-checked="false"></div>
             <span class="switch_display">Frame Count</span></div>
-        <input id="timing_method_input" type="checkbox" class="svelte-1n0nqp3"></label>
+        <input id="timing_method_input" type="checkbox" class="svelte-1c927sg"></label>
 </div>
-<button style="float: right; position: relative">Nerd Stuff
-</button>
-<div class="switch svelte-1n0nqp3" id="frames_or_seconds">Display Method:  
-    <label for="frames_or_seconds_input" class="svelte-1n0nqp3"><div class="svelte-1n0nqp3"><div class="slider svelte-1n0nqp3" data-checked="false"></div>
+    <div class="switch svelte-1c927sg" id="frames_or_seconds">Display Method:  
+    <label for="frames_or_seconds_input" class="svelte-1c927sg"><div class="svelte-1c927sg"><div class="slider svelte-1c927sg" data-checked="false"></div>
             <span class="switch_display">Seconds</span></div>
-        <input id="frames_or_seconds_input" type="checkbox" class="svelte-1n0nqp3"></label>
+        <input id="frames_or_seconds_input" type="checkbox" class="svelte-1c927sg"></label>
 </div>
+    <button>Nerd Stuff
+    </button></div>
 
 
 
 
 
 
-<div class="video_container svelte-17mjzuo"><div class="overlay  svelte-17mjzuo" this="[object Object]"><img src="load.gif" alt="" class="loading svelte-17mjzuo"></div>
-    <div class="no_video  svelte-17mjzuo"><img src="favicon.png" alt="" class="no_video_icon svelte-17mjzuo"></div>
-    <video  src="" muted class="svelte-17mjzuo" this="[object Object]" currentTime="0"></video>
+<div class="video_container svelte-1f01g3c"><div class="overlay  svelte-1f01g3c" this="[object Object]"><img src="load.gif" alt="" class="loading svelte-1f01g3c"></div>
+    <div class="no_video  svelte-1f01g3c"><img src="favicon.png" alt="" class="no_video_icon svelte-1f01g3c"></div>
+    <video  src="" muted class="svelte-1f01g3c" this="[object Object]" currentTime="0"></video>
 </div>
-<input type="range" min="0" max="0" class="svelte-cdkkzt" value="0">
-<div class="markers svelte-cdkkzt"><div style="--start_frame:0; --duration:0" class="start_frame svelte-cdkkzt"><img alt="" src="/end.png" class="svelte-cdkkzt"></div>
-    <div style="--end_frame:0; --duration:0" class="end_frame svelte-cdkkzt"><img alt="" src="/end.png" class="svelte-cdkkzt"></div>
+<input type="range" min="0" max="0" class="svelte-2ivz9q" value="0">
+<div class="markers svelte-2ivz9q"><div style="--start_frame:0; --duration:0" class="start_frame svelte-2ivz9q"><img alt="" src="/end.png" class="svelte-2ivz9q"></div>
+    <div style="--end_frame:0; --duration:0" class="end_frame svelte-2ivz9q"><img alt="" src="/end.png" class="svelte-2ivz9q"></div>
 </div>
 <div class="float-right">0.000</div>
-<br><button>Set Start</button>
+<button>Set Start</button>
 <button>Set End</button>
 <div>0.000
 </div>
@@ -71,7 +71,7 @@
 			
 			<script>
 				{
-					__sveltekit_esuqwn = {
+					__sveltekit_vgdje8 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -81,8 +81,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.b531ff82.js"),
-						import("./_app/immutable/entry/app.a7977d92.js")
+						import("./_app/immutable/entry/start.868621eb.js"),
+						import("./_app/immutable/entry/app.f1e6223f.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
