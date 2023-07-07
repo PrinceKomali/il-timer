@@ -67,11 +67,47 @@ button {
 code {
     font-size: 0.8em;
 }
-
 .controls {
     width: 51%;
     display: grid;
-    grid-template-columns: 1fr 0.9fr max-content;
+    // grid-template-columns: 1fr 0.9fr max-content;
+
     align-items: center;
     margin-block: var(--em-size-50);
+    column-gap: 1em;
+    row-gap: 0.5em;
+}
+.timing_controls {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.1em;
+}
+@media (min-width: 910px) {
+    .controls {
+        grid-template-columns: 1fr 0.9fr max-content;
+    }
+}
+@media not (min-width: 910px) {
+    .timing_controls {
+        grid-template-columns: repeat(2, 1fr);
+        button {
+            max-width: 6.24em;
+        }
+    }
+}
+// .timing_controls {
+//     display: flex;
+//     flex: 1;
+//     width: 100%;
+//     align-items: stretch;
+//     gap: 1.1em;
+//     button {
+//         display: flex;
+//         flex: 1;
+//         text-align: center;
+//     }
+// }
+
+.nerd_stuff_button {
+    max-width: 6.24em;
 }

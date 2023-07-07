@@ -71,7 +71,7 @@
         values={["frame", "ms"]}
         disp_values={["Frames", "Seconds"]}
     />
-    <button
+    <button class="nerd_stuff_button"
         on:click={() => (show_nerd_stuff = !show_nerd_stuff)}
     >
         Nerd Stuff
@@ -87,6 +87,14 @@
         <div>frame: {frame}</div>
     </code>
 {/if}
+<div class="timing_controls">
+<button>-5 Seconds</button>
+<button>+5 Seconds</button>
+<button>-15 Frames</button>
+<button>+15 Frames</button>
+<button>-1 Frame</button>
+<button>+1 Frame</button>
+</div>
 <Video
     bind:this={video}
     bind:currentTime
