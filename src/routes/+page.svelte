@@ -66,6 +66,7 @@
 </script>
 
 <svelte:body on:keydown={keyHandler} />
+<div class="wrapper">
 <main>
 <File {video} reset={reset_start_end} bind:text_value bind:submit_video />
 <div class="controls">
@@ -148,6 +149,7 @@
         <p>Contribute on <a href="https://github.com/PrinceKomali/il-timer/">Github</a></p>
     </div>
 </footer>
+</div>
 <style lang="scss" global>
     @import "styles/global.scss";
 </style>

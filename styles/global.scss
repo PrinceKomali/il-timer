@@ -24,10 +24,7 @@ body {
     color: var(--color-blue-50);
     overflow-x: hidden;
     margin: 0;
-    > div {
-        min-height: 100dvh
-    }
-    min-height: 1001dvh;
+    min-height: 100dvh;
     .background {
         background: url("/texture_nobg.png") repeat;
         position: fixed;
@@ -38,6 +35,13 @@ body {
     background-color: var(--color-blue-950);
     font-size: 1.2rem;
     line-height: 1.4;
+}
+
+.wrapper {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 main {
@@ -104,14 +108,7 @@ code {
 
 footer {
     @extend .util_transparent-background;
-    // position: absolute;
-    // left: 0;
-    // inset: 0;
-    // bottom: 0;
-    // top: auto;
-    right: 0;
     padding: 3rem min(10vw, 15rem);
-    display: flex;
     justify-content: space-between;
 
     p {
@@ -143,6 +140,10 @@ footer {
 @media (min-width: 910px) {
     .controls {
         grid-template-columns: 1fr 0.9fr max-content;
+    }
+
+    footer {
+        display: flex;
     }
 }
 
