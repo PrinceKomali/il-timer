@@ -16,13 +16,13 @@
     <meta property="og:description" content="Run timer for Breath of the Wild / Tears of the Kingdom">
     <meta property="og:image" content="https://timer.komali.dev/favicon.png">
     
-		<link href="./_app/immutable/assets/2.c4f905bc.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.f78f4f83.js">
+		<link href="./_app/immutable/assets/2.4b1129cf.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.dd9bab25.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.9fe87111.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.8aefcbeb.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.dca1bf27.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.fe19a688.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.cf031de8.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.e1682070.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.bab84e68.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.00e50aa0.js">
 </head>
 
 <body data-sveltekit-preload-data="hover">
@@ -31,21 +31,20 @@
 
 
 
-<button style="width: 6em"><label class="input_label svelte-1qr4qvs" for="file_input">Load File</label></button>
-<input class="url_input svelte-1qr4qvs" type="text" data-empty="true" placeholder="https://..." value="">
-<input id="file_input" type="file" class="svelte-1qr4qvs">
-
-<div class="controls"><div class="switch svelte-wp93hb" id="timing_method">Timing Method:  
-    <label for="timing_method_input" class="svelte-wp93hb"><div class="svelte-wp93hb"><div class="slider svelte-wp93hb" data-checked="false"></div>
+<main><button style="width: 6em"><label class="input_label svelte-lpl440" for="file_input">Load File</label></button>
+<input class="url_input svelte-lpl440" type="text" data-empty="true" placeholder="https://..." value="">
+<input id="file_input" type="file" class="svelte-lpl440">
+<div class="controls"><div class="switch svelte-906tr4" id="timing_method"><p class="svelte-906tr4">Timing Method: </p>
+    <label for="timing_method_input" class="svelte-906tr4"><div class="svelte-906tr4"><div class="slider svelte-906tr4" data-checked="false"></div>
             <span class="switch_display">Frame Count</span></div>
-        <input id="timing_method_input" type="checkbox" class="svelte-wp93hb"></label>
+        <input id="timing_method_input" type="checkbox" class="svelte-906tr4"></label>
 </div>
-    <div class="switch svelte-wp93hb" id="frames_or_seconds">Display Method:  
-    <label for="frames_or_seconds_input" class="svelte-wp93hb"><div class="svelte-wp93hb"><div class="slider svelte-wp93hb" data-checked="false"></div>
+    <div class="switch svelte-906tr4" id="frames_or_seconds"><p class="svelte-906tr4">Display Method: </p>
+    <label for="frames_or_seconds_input" class="svelte-906tr4"><div class="svelte-906tr4"><div class="slider svelte-906tr4" data-checked="false"></div>
             <span class="switch_display">Seconds</span></div>
-        <input id="frames_or_seconds_input" type="checkbox" class="svelte-wp93hb"></label>
+        <input id="frames_or_seconds_input" type="checkbox" class="svelte-906tr4"></label>
 </div>
-    <button class="nerd_stuff_button">Nerd Stuff
+    <button id="nerd_stuff_button">Nerd Stuff
     </button></div>
 
 
@@ -59,26 +58,29 @@
 
 
 
-<div class="video_container svelte-1f01g3c"><div class="overlay  svelte-1f01g3c" this="[object Object]"><img src="load.gif" alt="" class="loading svelte-1f01g3c"></div>
-    <div class="no_video  svelte-1f01g3c"><img src="favicon.png" alt="" class="no_video_icon svelte-1f01g3c"></div>
-    <video  src="" muted class="svelte-1f01g3c" this="[object Object]" currentTime="0"></video>
+<div class="video_container svelte-5lt057"><div class="overlay  svelte-5lt057" this="[object Object]"><img src="load.gif" alt="" class="loading svelte-5lt057"></div>
+    <div class="no_video  svelte-5lt057"><img src="favicon.png" alt="" class="no_video_icon svelte-5lt057"></div>
+    <video  src="" muted class="svelte-5lt057" this="[object Object]" currentTime="0"></video>
 </div>
-<input type="range" min="0" max="0" class="svelte-2ivz9q" value="0">
-<div class="markers svelte-2ivz9q"><div style="--start_frame:0; --duration:0" class="start_frame svelte-2ivz9q"><img alt="" src="/end.png" class="svelte-2ivz9q"></div>
-    <div style="--end_frame:0; --duration:0" class="end_frame svelte-2ivz9q"><img alt="" src="/end.png" class="svelte-2ivz9q"></div>
+<input type="range" min="0" max="0" class="svelte-1bpw4vy" value="0">
+<div class="markers svelte-1bpw4vy"><div style="--start_frame:0; --duration:0" class="start_frame svelte-1bpw4vy"><img alt="" src="/end.png" class="svelte-1bpw4vy"></div>
+    <div style="--end_frame:0; --duration:0" class="end_frame svelte-1bpw4vy"><img alt="" src="/end.png" class="svelte-1bpw4vy"></div>
 </div>
 <div class="float-right">0.000</div>
 <button>Set Start</button>
 <button>Set End</button>
 <div style="cursor:pointer">0.000 </div>
-
-<div class="credits">Made by <a href="https://komali.dev" target="_blank" class="name1">Komali</a> and <a href="https://github.com/surprisedpika" target="_blank" class="name2">Pika</a> </div>
+</main>
+<footer class="credits"><div><p>IL Timer V4</p>
+        <p>Made by <a href="https://komali.dev" target="_blank" class="name1">Komali</a> and <a href="https://github.com/surprisedpika" target="_blank" class="name2">Pika</a></p></div>
+    <div><p>Contribute on <a href="https://github.com/PrinceKomali/il-timer/">Github</a></p></div>
+</footer>
 
 
 			
 			<script>
 				{
-					__sveltekit_p6bpgx = {
+					__sveltekit_17bruol = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -88,8 +90,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.f78f4f83.js"),
-						import("./_app/immutable/entry/app.dca1bf27.js")
+						import("./_app/immutable/entry/start.dd9bab25.js"),
+						import("./_app/immutable/entry/app.cf031de8.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
