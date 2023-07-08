@@ -1,3 +1,5 @@
+@use "./utility.scss";
+
 .switch {
     label {
         cursor: pointer;
@@ -16,20 +18,30 @@
     display: flex;
     position: relative;
     gap: var(--em-size-50);
+
+    p {
+        margin: 0;
+    }
+}
+
+@media (max-width: 910px) {
+    .switch p {
+        width: 7.5em;
+    }
 }
 
 .slider {
+    @extend .util_round-full;
     display: block;
     width: var(--em-size-200);
     height: var(--em-size-100);
     padding: var(--em-size-10);
     background: var(--color-blue-400);
-    border-radius: 100vmax;
     position: relative;
 
     &::after {
-        transition: 300ms ease;
-        border-radius: 100vmax;
+        @extend .util_round-full;
+        @extend .util_transition;
         content: "";
         display: block;
         width: var(--em-size-100);

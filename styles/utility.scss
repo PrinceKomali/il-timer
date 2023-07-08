@@ -1,0 +1,17 @@
+.util_transparent-background {
+  background-color: hsl(240 13% 8% / 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.util_round-corners {
+  border-radius: 0.5em;
+}
+
+.util_round-full {
+  border-radius: 100vmax;
+}
+
+.util_transition {
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
