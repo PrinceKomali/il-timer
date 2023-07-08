@@ -40,7 +40,9 @@ body {
 }
 
 main {
-    margin: 3rem min(10vw, 15rem);
+    margin: 3rem auto;
+    width: calc(100vw - 2 * min(10vw, 15rem));
+    max-width: 100em;
 }
 
 .float-right {
