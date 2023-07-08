@@ -3,6 +3,7 @@
     --color-blue-200: hsl(240, 12%, 60%);
     --color-blue-400: hsl(240, 12%, 33%);
     --color-blue-950: hsl(240, 13%, 8%);
+    --color-blue-transparent: hsl(240 13% 8% / 0.5);
     --color-blue-main: hsl(200, 70%, 65%);
 
     --em-size-5: 0.05em;
@@ -97,7 +98,7 @@ code {
     max-width: 6.24em;
 }
 .credits {
-    background-color: hsl(240 13% 8% / 0.5);
+    background-color: var(--color-blue-transparent);
     backdrop-filter: blur(3px);
     position: absolute;
     left: 0;
