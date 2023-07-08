@@ -66,8 +66,8 @@
 </script>
 
 <svelte:body on:keydown={keyHandler} />
+<main>
 <File {video} reset={reset_start_end} bind:text_value bind:submit_video />
-
 <div class="controls">
     <Switch
         id="timing_method"
@@ -133,8 +133,19 @@
 <div style="cursor:pointer" on:click={()=>copy_to_clipboard()}>
     {time_display} {copy_message}
 </div>
-
-<div class="credits">Made by <a href="https://komali.dev" target="_blank" class="name1">Komali</a> and <a href="https://github.com/surprisedpika" target="_blank" class="name2">Pika</a> </div>
+<!-- TODO: Fix Above Error -->
+</main>
+<footer class="credits">
+    <div>
+        <p>IL Timer V4</p>
+        <p>
+            Made by <a href="https://komali.dev" target="_blank" class="name1">Komali</a> and <a href="https://github.com/surprisedpika" target="_blank" class="name2">Pika</a>
+        </p>
+    </div>
+    <div>
+        <p>Contribute on <a href="https://github.com/PrinceKomali/il-timer/">Github</a></p>
+    </div>
+</footer>
 <style lang="scss" global>
     @import "styles/global.scss";
 </style>

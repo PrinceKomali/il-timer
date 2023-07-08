@@ -9,7 +9,7 @@
 </script>
 
 <div class="switch" {id}>
-    {label}{": "} 
+    <p>{label}{": "}</p>
     <label for="{id}_input">
         <div>
             <div class="slider" data-checked={switch_value_raw} />
