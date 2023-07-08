@@ -12,17 +12,17 @@
     <meta name="description" content="Run timer for Breath of the Wild / Tears of the Kingdom">
     <meta property="og:url" content="https://timer.komali.dev">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Run timer for Breath of the Wild / Tears of the Kingdom">
+    <meta property="og:title" content="IL Timer V4">
     <meta property="og:description" content="Run timer for Breath of the Wild / Tears of the Kingdom">
     <meta property="og:image" content="https://timer.komali.dev/favicon.png">
     
-		<link href="./_app/immutable/assets/2.466fac66.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.868621eb.js">
+		<link href="./_app/immutable/assets/2.c4f905bc.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.f78f4f83.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.9fe87111.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.ec4bb71d.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.f1e6223f.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.8aefcbeb.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.dca1bf27.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.e1682070.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.7fe00b32.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.bab84e68.js">
 </head>
 
 <body data-sveltekit-preload-data="hover">
@@ -35,20 +35,26 @@
 <input class="url_input svelte-1qr4qvs" type="text" data-empty="true" placeholder="https://..." value="">
 <input id="file_input" type="file" class="svelte-1qr4qvs">
 
-<div class="controls"><div class="switch svelte-1c927sg" id="timing_method">Timing Method:  
-    <label for="timing_method_input" class="svelte-1c927sg"><div class="svelte-1c927sg"><div class="slider svelte-1c927sg" data-checked="false"></div>
+<div class="controls"><div class="switch svelte-wp93hb" id="timing_method">Timing Method:  
+    <label for="timing_method_input" class="svelte-wp93hb"><div class="svelte-wp93hb"><div class="slider svelte-wp93hb" data-checked="false"></div>
             <span class="switch_display">Frame Count</span></div>
-        <input id="timing_method_input" type="checkbox" class="svelte-1c927sg"></label>
+        <input id="timing_method_input" type="checkbox" class="svelte-wp93hb"></label>
 </div>
-    <div class="switch svelte-1c927sg" id="frames_or_seconds">Display Method:  
-    <label for="frames_or_seconds_input" class="svelte-1c927sg"><div class="svelte-1c927sg"><div class="slider svelte-1c927sg" data-checked="false"></div>
+    <div class="switch svelte-wp93hb" id="frames_or_seconds">Display Method:  
+    <label for="frames_or_seconds_input" class="svelte-wp93hb"><div class="svelte-wp93hb"><div class="slider svelte-wp93hb" data-checked="false"></div>
             <span class="switch_display">Seconds</span></div>
-        <input id="frames_or_seconds_input" type="checkbox" class="svelte-1c927sg"></label>
+        <input id="frames_or_seconds_input" type="checkbox" class="svelte-wp93hb"></label>
 </div>
-    <button>Nerd Stuff
+    <button class="nerd_stuff_button">Nerd Stuff
     </button></div>
 
 
+<div class="timing_controls"><button>-5 Seconds</button>
+<button>+5 Seconds</button>
+<button>-15 Frames</button>
+<button>+15 Frames</button>
+<button>-1 Frame</button>
+<button>+1 Frame</button></div>
 
 
 
@@ -64,14 +70,15 @@
 <div class="float-right">0.000</div>
 <button>Set Start</button>
 <button>Set End</button>
-<div>0.000
-</div>
+<div style="cursor:pointer">0.000 </div>
+
+<div class="credits">Made by <a href="https://komali.dev" target="_blank" class="name1">Komali</a> and <a href="https://github.com/surprisedpika" target="_blank" class="name2">Pika</a> </div>
 
 
 			
 			<script>
 				{
-					__sveltekit_vgdje8 = {
+					__sveltekit_p6bpgx = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -81,8 +88,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.868621eb.js"),
-						import("./_app/immutable/entry/app.f1e6223f.js")
+						import("./_app/immutable/entry/start.f78f4f83.js"),
+						import("./_app/immutable/entry/app.dca1bf27.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
