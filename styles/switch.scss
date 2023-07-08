@@ -12,9 +12,10 @@
     input {
         display: none;
     }
-    width: max-content;
+    min-width: max-content;
     display: flex;
-    // gap: var(--em-size-50);
+    position: relative;
+    gap: var(--em-size-50);
 }
 
 .slider {

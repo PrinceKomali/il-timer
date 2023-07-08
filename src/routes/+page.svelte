@@ -51,6 +51,18 @@
             await video.frame_advance(e.shiftKey ? 15 : 1);
         }
     }
+    let time_display;
+    $: time_display = format_time(
+        end_frame - start_frame + +(switch_value == "frame"),
+        duration,
+        switch_value_display
+    );
+    let copy_message = "";
+    function copy_to_clipboard() {
+        navigator.clipboard.writeText(time_display)
+        .then(() => copy_message = " (Copied!)");
+        setTimeout(()=>copy_message = "", 1000);
+    }
 </script>
 
 <svelte:body on:keydown={keyHandler} />
@@ -85,15 +97,17 @@
         <div>duration: {duration}</div>
         <div>currentTime: {currentTime}</div>
         <div>frame: {frame}</div>
+        <div>start_frame: {start_frame}</div>
+        
     </code>
 {/if}
 <div class="timing_controls">
-<button>-5 Seconds</button>
-<button>+5 Seconds</button>
-<button>-15 Frames</button>
-<button>+15 Frames</button>
-<button>-1 Frame</button>
-<button>+1 Frame</button>
+<button on:click={()=>video.frame_advance(-150)}>-5 Seconds</button>
+<button on:click={()=>video.frame_advance(150)}>+5 Seconds</button>
+<button on:click={()=>video.frame_advance(-15)}>-15 Frames</button>
+<button on:click={()=>video.frame_advance(15)}>+15 Frames</button>
+<button on:click={()=>video.frame_advance(-1)}>-1 Frame</button>
+<button on:click={()=>video.frame_advance(1)}>+1 Frame</button>
 </div>
 <Video
     bind:this={video}
@@ -116,13 +130,11 @@
 </div>
 <button on:click={() => (start_frame = frame)}>Set Start</button>
 <button on:click={() => (end_frame = frame)}>Set End</button>
-<div>
-    {format_time(
-        end_frame - start_frame + +(switch_value == "frame"),
-        duration,
-        switch_value_display
-    )}
+<div style="cursor:pointer" on:click={()=>copy_to_clipboard()}>
+    {time_display} {copy_message}
 </div>
+
+<div class="credits">Made by <a href="https://komali.dev" target="_blank" class="name1">Komali</a> and <a href="https://github.com/surprisedpika" target="_blank" class="name2">Pika</a> </div>
 <style lang="scss" global>
     @import "styles/global.scss";
 </style>

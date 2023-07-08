@@ -44,6 +44,7 @@ body {
 }
 
 button {
+    touch-action: manipulation;
     color: inherit;
     background: none;
     border-radius: var(--em-size-50);
@@ -80,34 +81,50 @@ code {
 .timing_controls {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1.1em;
+    gap: 0.5em;
+    
+    button {
+        width: 100%;
+        // max-width: max-content;
+    }
+}
+
+
+.nerd_stuff_button {
+    max-width: 6.24em;
+}
+.credits {
+    position: absolute;
+    // bottom: 0;
+    margin-top: 2em;
+    a {
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .name1  {
+        background-image: linear-gradient(to right, #EF8241,#EE4444, #EE4444);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: #0000;
+    }
+    .name2  {
+        background-image: linear-gradient(to right, #FFB3F3,#F772C5, #F772C5);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: #0000;
+    }
 }
 @media (min-width: 910px) {
     .controls {
         grid-template-columns: 1fr 0.9fr max-content;
     }
 }
-@media not (min-width: 910px) {
+@media (max-width: 910px) {
     .timing_controls {
         grid-template-columns: repeat(2, 1fr);
+        margin-inline: auto;
         button {
-            max-width: 6.24em;
+            justify-self: center;
         }
     }
-}
-// .timing_controls {
-//     display: flex;
-//     flex: 1;
-//     width: 100%;
-//     align-items: stretch;
-//     gap: 1.1em;
-//     button {
-//         display: flex;
-//         flex: 1;
-//         text-align: center;
-//     }
-// }
-
-.nerd_stuff_button {
-    max-width: 6.24em;
 }
