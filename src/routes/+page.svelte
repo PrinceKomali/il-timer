@@ -83,7 +83,7 @@
         values={["frame", "ms"]}
         disp_values={["Frames", "Seconds"]}
     />
-    <button class="nerd_stuff_button"
+    <button id="nerd_stuff_button"
         on:click={() => (show_nerd_stuff = !show_nerd_stuff)}
     >
         Nerd Stuff

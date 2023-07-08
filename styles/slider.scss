@@ -1,12 +1,13 @@
+@use "./utility.scss";
 $color-slider_value: var(--color-blue-200);
 $color-slider_bg: var(--color-blue-400);
 
 input[type="range"] {
+    @extend .util_round-corners;
     overflow: hidden;
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
-    border-radius: var(--em-size-50);
     margin-top: var(--em-size-50);
 
     &:focus-visible {
@@ -26,13 +27,13 @@ input[type="range"] {
     // }
 
     &::-webkit-slider-thumb {
+        @extend .util_round-corners;
         box-shadow: -100vw 0 0 calc(100vw - var(--em-size-50))
             $color-slider_value;
         -webkit-appearance: none;
         width: var(--em-size-100);
         height: var(--em-size-100);
         margin-left: -1px;
-        border-radius: var(--em-size-50);
         background-color: $color-slider_value;
         overflow: visible;
         cursor: pointer;
@@ -60,6 +61,7 @@ input[type="range"] {
         position: absolute;
         width: 1em;
         aspect-ratio: 1;
+        margin-left: calc(100% * calc(var(--frame) / var(--duration)) - .5em);
 
         img {
             display: block;
@@ -67,9 +69,9 @@ input[type="range"] {
         }
     }
     .start_frame {
-        margin-left: calc(100% * calc(var(--start_frame) / var(--duration)) - .5em);
+        --frame: var(--start_frame);
     }
     .end_frame {
-        margin-left: calc(100% * calc(var(--end_frame) / var(--duration)) - .5em);
+        --frame: var(--end_frame);
     }
 }

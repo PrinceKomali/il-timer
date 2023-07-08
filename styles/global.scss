@@ -1,11 +1,11 @@
+@use "./utility.scss";
+
 :root {
-    --color-blue-50: #eeeefe;
+    --color-blue-50: hsl(240, 89%, 96%);
     --color-blue-200: hsl(240, 12%, 60%);
     --color-blue-400: hsl(240, 12%, 33%);
     --color-blue-950: hsl(240, 13%, 8%);
-    --color-blue-transparent: hsl(240 13% 8% / 0.5);
     --color-blue-main: hsl(200, 70%, 65%);
-
     --em-size-5: 0.05em;
     --em-size-10: 0.1em;
     --em-size-15: 0.15em;
@@ -17,8 +17,6 @@
     --em-size-400: 4em;
     --em-size-500: 5em;
     --em-size-700: 7em;
-    --transition-duration: 300ms;
-    --transition-timing-function: ease;
 }
 
 body {
@@ -50,17 +48,18 @@ main {
 }
 
 button {
+    @extend .util_round-corners;
+    @extend .util_transition;
     touch-action: manipulation;
     color: inherit;
     background: none;
-    border-radius: var(--em-size-50);
     padding: var(--em-size-25) var(--em-size-50);
     border: var(--em-size-20) solid var(--color-blue-400);
+    text-align: center;
     cursor: pointer;
     font: inherit;
 
-    transition: background var(--transition-duration)
-        var(--transition-timing-function);
+    transition-property: background;
 
     &:hover {
         background: var(--color-blue-400);
@@ -71,19 +70,21 @@ button {
         outline: none;
     }
 }
+
 code {
     font-size: 0.8em;
 }
+
 .controls {
     width: 51%;
     display: grid;
-    // grid-template-columns: 1fr 0.9fr max-content;
 
     align-items: center;
     margin-block: var(--em-size-50);
     column-gap: 1em;
     row-gap: 0.5em;
 }
+
 .timing_controls {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -91,17 +92,15 @@ code {
     
     button {
         width: 100%;
-        // max-width: max-content;
     }
 }
 
-
-.nerd_stuff_button {
+#nerd_stuff_button {
     max-width: 6.24em;
 }
-.credits {
-    background-color: var(--color-blue-transparent);
-    backdrop-filter: blur(3px);
+
+footer {
+    @extend .util_transparent-background;
     position: absolute;
     left: 0;
     right: 0;
@@ -134,11 +133,13 @@ code {
         color: #0000;
     }
 }
+
 @media (min-width: 910px) {
     .controls {
         grid-template-columns: 1fr 0.9fr max-content;
     }
 }
+
 @media (max-width: 910px) {
     .timing_controls {
         grid-template-columns: repeat(2, 1fr);
