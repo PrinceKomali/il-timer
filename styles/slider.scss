@@ -59,6 +59,7 @@ input[type="range"] {
     .start_frame,
     .end_frame {
         position: absolute;
+        cursor: pointer;
         width: 1em;
         aspect-ratio: 1;
         margin-left: calc(100% * calc(var(--frame) / var(--duration)) - .5em);

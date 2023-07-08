@@ -124,6 +124,8 @@
     fn={slider_time}
     {start_frame}
     {end_frame}
+    click_start={()=>video.set_video_time(start_frame)}
+    click_end={()=>video.set_video_time(end_frame)}
 />
 <div class="float-right">
     {format_time(frame, duration, switch_value_display)}
