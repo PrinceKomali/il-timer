@@ -16,13 +16,13 @@
     <meta property="og:description" content="Run timer for Breath of the Wild / Tears of the Kingdom">
     <meta property="og:image" content="https://timer.komali.dev/favicon.png">
     
-		<link href="./_app/immutable/assets/2.4b1129cf.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.dd9bab25.js">
+		<link href="./_app/immutable/assets/2.fbc316de.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.498a9c78.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.9fe87111.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.fe19a688.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.cf031de8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.d9b4a80a.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.67afd818.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.e1682070.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.00e50aa0.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.8ee03a66.js">
 </head>
 
 <body data-sveltekit-preload-data="hover">
@@ -31,7 +31,7 @@
 
 
 
-<main><button style="width: 6em"><label class="input_label svelte-lpl440" for="file_input">Load File</label></button>
+<div class="wrapper"><main><button style="width: 6em"><label class="input_label svelte-lpl440" for="file_input">Load File</label></button>
 <input class="url_input svelte-lpl440" type="text" data-empty="true" placeholder="https://..." value="">
 <input id="file_input" type="file" class="svelte-lpl440">
 <div class="controls"><div class="switch svelte-906tr4" id="timing_method"><p class="svelte-906tr4">Timing Method: </p>
@@ -73,14 +73,14 @@
 </main>
 <footer class="credits"><div><p>IL Timer V4</p>
         <p>Made by <a href="https://komali.dev" target="_blank" class="name1">Komali</a> and <a href="https://github.com/surprisedpika" target="_blank" class="name2">Pika</a></p></div>
-    <div><p>Contribute on <a href="https://github.com/PrinceKomali/il-timer/">Github</a></p></div>
-</footer>
+    <div><p>Contribute on <a href="https://github.com/PrinceKomali/il-timer/">Github</a></p></div></footer>
+</div>
 
 
 			
 			<script>
 				{
-					__sveltekit_17bruol = {
+					__sveltekit_10k2ji2 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -90,8 +90,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.dd9bab25.js"),
-						import("./_app/immutable/entry/app.cf031de8.js")
+						import("./_app/immutable/entry/start.498a9c78.js"),
+						import("./_app/immutable/entry/app.67afd818.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
